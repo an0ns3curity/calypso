@@ -546,7 +546,7 @@ class GeneticAlgoWrapper:
 challenges = challenges=random_inputs(n=CHALLENGE_LENGTH, N=CHALLENGE_NUM, seed=random.randint(0,100))
 targetPUF = lppuf.LPPUFv1(n=CHALLENGE_LENGTH, m=PUF_LENGTH, seed=random.randint(0,100))
 responses = targetPUF.eval(challenges)
-test_challenges = random_inputs(n=CHALLENGE_LENGTH, N=1000, seed=random.randint(0,100))
+test_challenges = random_inputs(n=CHALLENGE_LENGTH, N=1000000, seed=random.randint(0,100))
 test_responses = targetPUF.eval(test_challenges)
 optimal_bias = pypuf.metrics.bias_data(responses)
 print("Optimal bias: ", optimal_bias)
